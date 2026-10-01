@@ -1,0 +1,32 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:html": "html-validate index.html",
+    "check:css": "stylelint style.css",
+    "check:js": "eslint script.js",
+    "ci": "npm run check:html && npm run check:css && npm run check:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Radikaa34/UI-Lens.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Radikaa34/UI-Lens/issues"
+  },
+  "homepage": "https://github.com/Radikaa34/UI-Lens#readme",
+  "devDependencies": {
+    "eslint": "^10.11.0",
+    "html-validate": "^11.16.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+
+}

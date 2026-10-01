@@ -5,6 +5,7 @@ body{
     background:black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 nav{
     display:flex;
     align-items: center;
@@ -13,51 +14,63 @@ nav{
     gap:35px;
     color:white;
 }
+
 .logo{
     margin-right:auto;
     display:flex;
     gap:8px;
 }
+
 .logo img{
     width:60px;
     height:auto
 }
+
+.accent{
+    color:rgb(204 61 204)
+}
+
 nav a{
     text-decoration: none;
     color:white;
     font-size: 17px;
 }
+
 nav button{
-    padding:6px;
-    background:rgb(68, 68, 246);
+    background:rgb(68 68 246);
     border:none;
     padding:12px;
     border-radius: 4px;
     color:white;
     margin-left:auto;
 }
+
 main{
     color:white;
     margin-top:25px;
     margin-left:5%;
     margin-right:5%;
 }
+
 main h1{
     font-size: 40px;
 }
+
 main p{
     font-size: 25px;
     
 }
+
 .btn{
     display:flex;
     gap:35px;
     padding:20px;
     margin-left:10%;
 }
+
 .ana{
     padding:20px;
-    background:rgb(68, 68, 246);
+    background:rgb(68 68 246);
     border:none;
     border-radius:5px;
     color:white;
@@ -67,12 +80,19 @@ main p{
     gap:8px;
     font-size:15px;
 }
+
+.code img,.upload img,.search img{
+    width:50px;
+    height:50px;
+}
+
 .hero .ana img{
     width:25px;
     height:20px;
     padding-left:5px;
 
 }
+
 .see{
     padding:20px;
     border:none;
@@ -81,80 +101,45 @@ main p{
     font-weight: 600;
     font-size:15px
 }
+
 .hero{
     display:flex;
     gap:30px;
 }
+
 .photo{
     width:650px;
     height:auto;
     margin-right:40px;
     margin-top:50px;
 }
+
 .content{
     padding:20px;
     margin-right:auto;
 }
-.upload{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    flex-wrap: wrap;
-    align-items: center;
-    padding:5px;
-    border: 2px solid #2a2a3a;
-border-radius: 12px;
-padding: 20px;
-background: #0d0d12;
-flex:1;
-}
-.upload img{
-    width:50px;
-    height:50px;
-   
-}
+
 .works p{
     font-size: 20px;
     min-height:50px;
 }
-.search{
+
+.code,.search,.upload{
     display:flex;
     flex-direction:column;
-    align-items:flex-start;
-    flex-wrap: wrap;
     align-items: center;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 20px;
-    flex:1;
-     border: 2px solid #2a2a3a;
-     background: #0d0d12;
-}
-.search img{
-    width:50px;
-    height:50px;
-}
-.code{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    flex-wrap: wrap;
-    align-items: center;
-    border: 1px solid #333;
     border-radius: 12px;
     padding: 20px;flex:1;
     background: #0d0d12;
-     border: 2px solid #2a2a3a;
+    border: 2px solid #2a2a3a;
 }
-.code img{
-    width:50px;
-    height:50px;
-}
+
 .works{
     display:flex;
     gap:35px;
     
 }
+
 .ana:hover,.see:hover,.upload:hover,.code:hover,.search:hover{
     transform: translateX(5px) scale(1.03);
     box-shadow: 0 5px 15px #0d0d12;
