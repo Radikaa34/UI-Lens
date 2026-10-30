@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexPlanet - Task 2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            background: #1e3a8a;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #facc15;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Form */
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 13px;
+        }
+
+        .success {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        /* Responsive Grid */
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-card {
+            background: #dbeafe;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* To-Do List */
+
+        .todo-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .todo-input input {
+            flex: 1;
+        }
+
+        #taskList {
+            list-style: none;
+        }
+
+        #taskList li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            background: #eff6ff;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        .delete-btn {
+            background: #dc2626;
+            padding: 7px 12px;
+        }
+
+        .delete-btn:hover {
+            background: #b91c1c;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Media Queries */
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .todo-input {
+                flex-direction: column;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Web Development Project</h1>
+        <p>ApexPlanet Internship - Task 2</p>
+    </header>
+
+    <nav>
+        <a href="#contact">Contact Form</a>
+        <a href="#layout">Responsive Layout</a>
+        <a href="#todo">To-Do List</a>
+    </nav>
+
+    <main>
+
+        <!-- Contact Form -->
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+
+            <form id="contactForm" novalidate>
+
+                <div>
+                    <input type="text" id="name" placeholder="Enter your name">
+                    <span class="error" id="nameError"></span>
+                </div>
+
+                <div>
+                    <input type="email" id="email" placeholder="Enter your email">
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <div>
+                    <input type="text" id="subject" placeholder="Enter subject">
+                    <span class="error" id="subjectError"></span>
+                </div>
+
+                <div>
+                    <textarea id="message" placeholder="Enter your message"></textarea>
+                    <span class="error" id="messageError"></span>
+                </div>
+
+                <button type="submit">Submit</button>
+
+                <p id="formSuccess" class="success"></p>
+
+            </form>
+        </section>
+
+        <!-- Responsive Layout -->
+        <section class="section" id="layout">
+            <h2>Our Services</h2>
+
+            <div class="grid-container">
+
+                <div class="grid-card">
+                    <h3>Web Design</h3>
+                    <p>Creative and modern website designs.</p>
+                </div>
+
+                <div class="grid-card">
+                    <h3>Development</h3>
+                    <p>Responsive and functional websites.</p>
+                </div>
+
+                <div class="grid-card">
+                    <h3>JavaScript</h3>
+                    <p>Interactive web applications.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dynamic To-Do List -->
+        <section class="section" id="todo">
+            <h2>My To-Do List</h2>
+
+            <div class="todo-input">
+                <input type="text" id="taskInput"
+                       placeholder="Enter a new task">
+
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <ul id="taskList"></ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 My Web Development Project | ApexPlanet Internship</p>
+    </footer>
+
+    <script>
+
+        // Contact Form Validation
+
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            document.querySelectorAll(".error").forEach(error => {
+                error.textContent = "";
+            });
+
+            document.getElementById("formSuccess").textContent = "";
+
+            let valid = true;
+
+            if (name === "") {
+                document.getElementById("nameError").textContent =
+                    "Name is required";
+                valid = false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent =
+                    "Enter a valid email address";
+                valid = false;
+            }
+
+            if (subject === "") {
+                document.getElementById("subjectError").textContent =
+                    "Subject is required";
+                valid = false;
+            }
+
+            if (message === "") {
+                document.getElementById("messageError").textContent =
+                    "Message is required";
+                valid = false;
+            }
+
+            if (valid) {
+                document.getElementById("formSuccess").textContent =
+                    "Form submitted successfully!";
+
+                contactForm.reset();
+            }
+
+        });
+
+
+        // Dynamic To-Do List
+
+        function addTask() {
+
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            const span = document.createElement("span");
+            span.textContent = taskText;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete-btn";
+
+            deleteButton.addEventListener("click", function() {
+                li.remove();
+            });
+
+            li.appendChild(span);
+            li.appendChild(deleteButton);
+
+            document.getElementById("taskList").appendChild(li);
+
+            taskInput.value = "";
+        }
+
+    </script>
+
+</body>
+</html>
